@@ -1,0 +1,448 @@
+node n1 {
+    type router
+    model router
+    network-config {
+	hostname n1
+	!
+	interface eth1
+	 ip address 10.0.2.1/24
+	 ipv6 address 2001:2::1/64
+	 mac address 00:00:00:aa:00:02
+	!
+	interface eth0
+	 ip address 10.0.0.1/24
+	 ipv6 address 2001::1/64
+	 mac address 00:00:00:aa:00:00
+	!
+    }
+    canvas c1
+    iconcoords {593.0 435.0}
+    labelcoords {593.0 467.0}
+    services {OSPFv2 OSPFv3 zebra IPForward SSH UserDefined}
+    interface-peer {eth0 n2}
+    interface-peer {eth1 n3}
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion',)
+	files=('setup.sh',)
+	startidx=0
+	cmdup=('sh ./setup.sh',)
+	cmddown=()
+	cmdval=()
+	meta=Customize this service to do anything upon startup.
+	starttime=0
+	}
+    }
+}
+
+node n2 {
+    type router
+    model router
+    network-config {
+	hostname n2
+	!
+	interface eth0
+	 ip address 10.0.0.2/24
+	 ipv6 address 2001::2/64
+	 mac address 00:00:00:aa:00:01
+	!
+    }
+    canvas c1
+    iconcoords {300.0 435.0}
+    labelcoords {300.0 467.0}
+    services {OSPFv2 OSPFv3 zebra IPForward SSH UserDefined}
+    interface-peer {eth0 n1}
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion',)
+	files=('setup.sh',)
+	startidx=0
+	cmdup=('sh ./setup.sh',)
+	cmddown=()
+	cmdval=()
+	meta=Customize this service to do anything upon startup.
+	starttime=0
+	}
+    }
+}
+
+node n4 {
+    type router
+    model mdr
+    network-config {
+	hostname n4
+	!
+	interface eth0
+	 ipv6 address 2001:0::1/128
+	 ip address 10.3.3.1/32
+	!
+    }
+    canvas c1
+    iconcoords {509.0 131.0}
+    labelcoords {509.0 163.0}
+    services {OSPFv3MDR zebra IPForward SSH UserDefined}
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion',)
+	files=('setup.sh',)
+	startidx=0
+	cmdup=('sh ./setup.sh',)
+	cmddown=()
+	cmdval=()
+	meta=Customize this service to do anything upon startup.
+	starttime=0
+	}
+    }
+    interface-peer {eth0 n6}
+}
+
+node n3 {
+    type router
+    model mdr
+    network-config {
+	hostname n3
+	!
+	interface eth0
+	 ipv6 address 2001:0::2/128
+	 ip address 10.3.3.2/32
+	!
+	interface eth1
+	 ip address 10.0.2.2/24
+	 ipv6 address 2001:2::2/64
+	 mac address 00:00:00:aa:00:03
+	!
+    }
+    canvas c1
+    iconcoords {594.0 257.0}
+    labelcoords {594.0 289.0}
+    services {OSPFv2 OSPFv3 OSPFv3MDR zebra IPForward UserDefined}
+    interface-peer {eth1 n1}
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion',)
+	files=('setup.sh',)
+	startidx=0
+	cmdup=('sh ./setup.sh',)
+	cmddown=()
+	cmdval=()
+	meta=Customize this service to do anything upon startup.
+	starttime=0
+	}
+    }
+    interface-peer {eth0 n6}
+}
+
+node n6 {
+    type wlan
+    network-config {
+	hostname Satellites
+	!
+	interface wireless
+	 ip address 10.0.1.0/32
+	 ipv6 address 2001:0::0/128
+	!
+	mobmodel
+	coreapi
+	basic_range
+	ns2script
+	!
+    }
+    custom-config {
+	custom-config-id basic_range
+	custom-command {3 3 9 9 9}
+	config {
+	range=255
+	bandwidth=54000000
+	jitter=0
+	delay=20000
+	error=0
+	}
+    }
+    custom-config {
+	custom-config-id ns2script
+	custom-command {10 3 11 10 10 10 10 10}
+	config {
+	file=
+	refresh_ms=250
+	loop=1
+	autostart=0.0
+	map=
+	script_start=
+	script_pause=
+	script_stop=
+	}
+    }
+    canvas c1
+    iconcoords {759.0 211.0}
+    labelcoords {758.0 218.0}
+    interface-peer {e0 n4}
+    interface-peer {e1 n3}
+    interface-peer {e2 n5}
+}
+
+node n5 {
+    type router
+    model mdr
+    network-config {
+	hostname n5
+	!
+	interface eth0
+	 ip address 10.3.3.3/32
+	 ipv6 address 2001:0::3/128
+	!
+    }
+    canvas c1
+    iconcoords {689.0 135.0}
+    labelcoords {689.0 167.0}
+    services {zebra OSPFv3MDR IPForward SSH UserDefined}
+    custom-config {
+	custom-config-id service:UserDefined:setup.sh
+	custom-command setup.sh
+	config {
+	foo=`dirname $SESSION_FILENAME`
+	sh $foo/generalSetup.sh
+	}
+    }
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	dirs=('/var/ion',)
+	files=('setup.sh',)
+	startidx=0
+	cmdup=('sh ./setup.sh',)
+	cmddown=()
+	cmdval=()
+	meta=Customize this service to do anything upon startup.
+	starttime=0
+	}
+    }
+    interface-peer {eth0 n6}
+}
+
+link l1 {
+    nodes {n1 n2}
+}
+
+link l4 {
+    nodes {n1 n3}
+}
+
+link l2 {
+    nodes {n6 n4}
+}
+
+link l3 {
+    nodes {n6 n3}
+}
+
+link l5 {
+    nodes {n6 n5}
+}
+
+annotation a4 {
+    type text
+    iconcoords {315.0 87.0}
+    label {}
+    canvas c1
+}
+
+annotation a9 {
+    type text
+    iconcoords {231.0 108.0}
+    label {}
+    canvas c1
+}
+
+annotation a1 {
+    iconcoords {272.0 15.0}
+    type text
+    label {CFDP Scenario: 2x Satellites > Mission Control}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {16}
+    effects {bold underline}
+    canvas c1
+}
+
+annotation a2 {
+    type text
+    iconcoords {541.0 38.0}
+    label {}
+    canvas c1
+}
+
+annotation a3 {
+    type text
+    iconcoords {584.0 37.0}
+    label {}
+    canvas c1
+}
+
+annotation a5 {
+    type text
+    iconcoords {691.0 42.0}
+    label {}
+    canvas c1
+}
+
+annotation a6 {
+    type text
+    iconcoords {610.0 44.0}
+    label {}
+    canvas c1
+}
+
+annotation a7 {
+    iconcoords {907.0 486.0}
+    type text
+    label {Luke Colins}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    canvas c1
+}
+
+annotation a8 {
+    type text
+    iconcoords {880.0 464.0}
+    label {}
+    canvas c1
+}
+
+canvas c1 {
+    name {Canvas1}
+    wallpaper-style {scaled}
+    wallpaper {/home/core/ion-scenarios/two-satellites-v1/background.png}
+    refpt {0 0 47.5791667 -122.132322 2.0}
+    scale {150.0}
+    size {1000 500}
+}
+
+hook 3:instantiation_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+rm -f /tmp/ionrcdate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+hook 4:runtime_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+echo `date` "Starting run" > /tmp/baseLog.txt
+
+pycore=`ls /tmp | grep pycore`
+echo `date` "pycore instance is: $pycore" >> /tmp/baseLog.txt
+
+#
+# need to ssh here because if you just try to start an xterm when the
+# core-daemon is started as a service there's (no tty?) and you can't
+# make an xterm.
+#
+sleep 10 && ssh -X -t -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/core/.ssh/DTNDevKit core@127.0.0.1 "export DISPLAY=:0 && xterm -geometry 10x10 -e /home/core/.core/configs/NASA_DTN_DEV_KIT/common/bundleCounts.sh" &
+
+
+# Set up X tunnels to all nodes.
+# on each node, export DISPLAY=localhost:10.0
+sleep 5 && ssh -X -t -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/core/.ssh/DTNDevKit core@127.0.0.1 "export DISPLAY=:0 && xterm -geometry 0x0 -e /home/core/.core/configs/NASA_DTN_DEV_KIT/common/setupSSH.sh" &
+}
+
+hook 6:shutdown_hook.sh {
+#!/bin/sh
+# session hook script; write commands here to execute on the host at the
+# specified state
+
+ps auxww | grep bundleCounts | awk '{print $2}' | xargs kill -9
+ps auxww | grep runcg2 | awk '{print $2}' | xargs kill -9
+ps auxww | grep setupSSH | awk '{print $2}' | xargs kill -9
+}
+
+option global {
+    interface_names no
+    ip_addresses yes
+    ipv6_addresses no
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+    controlnet=192.168.250.0/24
+    controlnet0=
+    controlnet1=
+    controlnet2=
+    controlnet3=
+    controlnet_updown_script=
+    enablerj45=1
+    enablesdt=0
+    preservedir=0
+    sdturl=tcp://127.0.0.1:50000/
+}
+
