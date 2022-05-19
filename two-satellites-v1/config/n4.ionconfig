@@ -1,14 +1,14 @@
 #### ION Node Configuration Parameters File ################################################
 # ION node configuration parameters are passed to ionadmin in a file of parameter name and #
-# value pairs:		    								                                   #
-#			parameter_name parameter_value				 	                               #
-#										 	                                               #                                 
-# You can find more details by using the 'man ionconfig' command in the terminal.	       #    
+# value pairs:                                                                             #
+#     parameter_name parameter_value                                                       #
+#                                                                                          #
+# You can find more details by using the 'man ionconfig' command in the terminal.          #
 ############################################################################################
 
-wmKey		0
-sdrName		ion
-wmSize		5000000
-configFlags	1
-heapWords	5000000
+wmKey       0
+sdrName     ion
+wmSize      5000000
+configFlags 1
+heapWords   5000000
 pathName    /var/ion
