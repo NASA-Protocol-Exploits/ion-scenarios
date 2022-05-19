@@ -3,7 +3,7 @@
 # neighboring nodes that are members of endpoints identified in the "ipn" URI scheme and  #
 # (b) establish static default routing rules for forwarding bundles to specified destina- #
 # tion nodes.                                                                             #
-#	                                                                                        #
+#                                                                                         #
 # You can find more details by using the 'man ipnrc' command in the terminal.             #
 ###########################################################################################
 
