@@ -1,0 +1,2 @@
+IPN_NODE_NUMBER=2
+MANAGER="ipn:2.6"

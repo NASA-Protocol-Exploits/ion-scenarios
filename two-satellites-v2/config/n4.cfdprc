@@ -1,0 +1,37 @@
+# Initialize
+1
+
+# Add destinations
+a entity 1 bp ipn:1.0   10 0 0
+a entity 2 bp ipn:2.0   10 0 0
+a entity 3 bp ipn:3.0   10 0 0
+a entity 4 bp ipn:4.0   10 0 0
+a entity 5 bp ipn:5.0   10 0 0
+a entity 6 bp ipn:6.0   10 0 0
+a entity 7 bp ipn:7.0   10 0 0
+a entity 8 bp ipn:8.0   10 0 0
+a entity 9 bp ipn:9.0   10 0 0
+a entity 10 bp ipn:10.0 10 0 0
+
+# Echo control (all output from cfdpadmin to be logged)
+e 1
+
+# Turn on CFDP watch characters
+w 1
+
+# Set max segment size
+# (Number of bytes of file data in each file data PDU transmitted
+#  by the local CFDP entity)
+m segsize 1000
+
+m ckperiod 1
+m maxtimeouts 2
+m inactivity 300
+
+# Discard partially received files upon cancellation of a file reception
+m discard 1
+
+# Require CRCs on PDUs
+m requirecrc 1
+
+s 'bputa'

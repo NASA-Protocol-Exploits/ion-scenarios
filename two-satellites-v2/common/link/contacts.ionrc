@@ -1,0 +1,88 @@
+#### Contacts.ionrc Syntax Guide ##########################################################
+# a range	+<rel_start_time>    +<rel_end_time>    <from>    <to>    <light_seconds> #
+# a contact 	+<rel_start_time>    +<rel_end_time>    <from>    <to>    <light_seconds> #
+###########################################################################################
+
+# Node 1 to 2
+a range    +0   +4000000      1     2   1
+a range    +0   +4000000      2     1   1
+a contact  +0   +4000000      1     2   500000
+a contact  +0   +4000000      2     1   500000
+
+# Node 1 to 3
+a range    +0   +4000000      1     3   1
+a range    +0   +4000000      3     1   1
+a contact  +0   +4000000      1     3   500000
+a contact  +0   +4000000      3     1   500000
+
+# Node 1 to 1 (loopback adapter)
+a range    +0   +4000000      1     1   1
+a contact  +0   +4000000      1     1   500000
+
+# Node 2 to 2 (loopback adapter)
+a range    +0   +4000000      2     2   1
+a contact  +0   +4000000      2     2   500000
+
+# Node 3 to 3 (loopback adapter)
+a range    +0   +4000000      3     3   1
+a contact  +0   +4000000      3     3   500000
+
+# Node 4 to 4 (loopback adapter)
+a range    +0   +4000000      4     4   1
+a contact  +0   +4000000      4     4   500000
+
+# Node 5 to 5 (loopback adapter)
+a range    +0   +4000000      4     4   1
+a contact  +0   +4000000      4     4   500000
+
+# Node 3 to 4 (ground to satellite #1)
+a range    +0   +4000000      3     4   1
+
+a contact  +0    +21           3     4   500000
+a contact  +0    +21           4     3   500000
+
+a contact  +42   +77           3     4   500000
+a contact  +42   +77           4     3   500000
+
+a contact  +102  +137          3     4   500000
+a contact  +102  +137          4     3   500000
+
+a contact  +162  +197          3     4   500000
+a contact  +162  +197          4     3   500000
+
+a contact  +222  +257          3     4   500000
+a contact  +222  +257          4     3   500000
+
+a contact  +282  +317          3     4   500000
+a contact  +282  +317          4     3   500000
+
+a contact  +342  +377          3     4   500000
+a contact  +342  +377          4     3   500000
+
+# Node 3 to 4 (ground to satellite #2)
+a range    +0   +4000000      3     5   1
+
+a contact  +0    +21           3     5   500000
+a contact  +0    +21           5     3   500000
+
+a contact  +42   +77           3     5   500000
+a contact  +42   +77           5     3   500000
+
+a contact  +102  +137          3     5   500000
+a contact  +102  +137          5     3   500000
+
+a contact  +162  +197          3     5   500000
+a contact  +162  +197          5     3   500000
+
+a contact  +222  +257          3     5   500000
+a contact  +222  +257          5     3   500000
+
+a contact  +282  +317          3     5   500000
+a contact  +282  +317          5     3   500000
+
+a contact  +342  +377          3     5   500000
+a contact  +342  +377          5     3   500000
+
+# Node 4 to 5 (ground to satellite #2)
+d contact * 4 5 
+
