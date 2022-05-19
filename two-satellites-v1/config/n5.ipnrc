@@ -13,4 +13,3 @@
 #a plan <node> <protocol>/<num/address> 
 a plan 5 udp/127.0.0.1
 a plan 3 ltp/3
-
