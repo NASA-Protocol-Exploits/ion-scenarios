@@ -10,11 +10,8 @@
 #-------------------------------------------------------------------------------------------
 # Add an egress plan. (to neighboring nodes/hosts)
 #-------------------------------------------------------------------------------------------
-#a plan <node> <protocol>/<num/address> 4556
+#a plan <node> <protocol>/<num/address> 556
 
 a plan 1 udp/127.0.0.1
 a plan 2 tcp/10.0.0.2:4556
-a plan 3 tcp/10.0.1.2:4556
-a plan 4 tcp/10.0.2.2:4556
-a plan 5 tcp/10.0.2.3:4556
-
+a plan 3 tcp/10.0.2.2:4556

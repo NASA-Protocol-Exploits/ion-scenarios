@@ -4,7 +4,7 @@
 # with exactly one command per line.                                                       #
 #                                                                                          #
 # You can find more details by using the 'man bprc' command in the terminal.               #
-############################################################################################          
+############################################################################################
 
 #-------------------------------------------------------------------------------------------
 # Initialization command (command 1).
@@ -59,7 +59,6 @@ a induct  ltp 1 ltpcli
 
 #--- Live Outducts ---
 a outduct udp 127.0.0.1 udpclo
-a outduct tcp 10.0.2.1:4556 tcpclo
 a outduct ltp 3 ltpclo
 a outduct ltp 5 ltpclo
 

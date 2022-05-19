@@ -4,7 +4,7 @@
 # with exactly one command per line.                                                       #
 #                                                                                          #
 # You can find more details by using the 'man bprc' command in the terminal.               #
-############################################################################################         
+############################################################################################
 
 #-------------------------------------------------------------------------------------------
 # Initialization command (command 1).
@@ -29,10 +29,8 @@ a endpoint ipn:2.7 x
 a endpoint ipn:2.8 x
 a endpoint ipn:2.9 x
 a endpoint ipn:2.10 x
-
 a endpoint ipn:2.64 x
 a endpoint ipn:2.65 x
-
 
 #-------------------------------------------------------------------------------------------
 # Add a protocol for external nodes.
@@ -64,7 +62,6 @@ a induct  ltp 1 ltpcli
 a outduct udp 127.0.0.1 udpclo
 a outduct tcp 10.0.0.1 tcpclo
 
-
 #-------------------------------------------------------------------------------------------
 # Select level of BP watch activities - 0 = None; 1 = All
 #-------------------------------------------------------------------------------------------
@@ -81,4 +78,3 @@ r 'ipnadmin n2.ipnrc'
 # Start all declared schemes and protocols on the local node
 #-------------------------------------------------------------------------------------------
 s
-

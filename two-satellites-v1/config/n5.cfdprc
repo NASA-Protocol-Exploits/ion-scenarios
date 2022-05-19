@@ -1,8 +1,8 @@
-#### CCSDS File Delivery Protocol Management  Configuration File ########################### 
+#### CCSDS File Delivery Protocol Management  Configuration File ###########################
 # CFDP management commands are passed to cfdpadmin either in a file of text lines or inte- #
 # ractively at cfdpadmin's command prompt (:).  Commands are interpreted line-by line with #
-# exactly one command per line.                                           		   #
-#										           #
+# exactly one command per line.                                                            #
+#                                                                                          #
 # You can find more details by using the 'man cfdprc' command in the terminal.             #
 ############################################################################################
 
@@ -60,10 +60,8 @@ m inactivity 300
 #-------------------------------------------------------------------------------------------
 m discard 1
 
-
 #-------------------------------------------------------------------------------------------
 # Require CRCs on PDUs? (0 or 1) 
 #-------------------------------------------------------------------------------------------
 m requirecrc 1
-
 s 'bputa'
