@@ -98,8 +98,8 @@ node n4 {
 	!
     }
     canvas c1
-    iconcoords {509.0 131.0}
-    labelcoords {509.0 163.0}
+    iconcoords {447.0 145.0}
+    labelcoords {447.0 177.0}
     services {OSPFv3MDR zebra IPForward SSH UserDefined}
     custom-config {
 	custom-config-id service:UserDefined:setup.sh
@@ -232,8 +232,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {689.0 135.0}
-    labelcoords {689.0 167.0}
+    iconcoords {760.0 135.0}
+    labelcoords {760.0 167.0}
     services {zebra OSPFv3MDR IPForward SSH UserDefined}
     custom-config {
 	custom-config-id service:UserDefined:setup.sh
