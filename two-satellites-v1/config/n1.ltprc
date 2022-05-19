@@ -1,10 +1,10 @@
 #### Licklider Transmission Protocol Managment Configuration File ##########################
 # LTP management commands are passed to ltpadmin either in a file of text lines or intera- #
 # ctively at ltpadmin's command prompt (:). Commands are interpreted line-by line, with e- #
-# xactly one command per line.                                                    	       #
-#											                                               #
+# xactly one command per line.                                                             #
+#                                                                                          #
 # You can find more details by using the 'man ltprc' command in the terminal.              #
-############################################################################################ 
+############################################################################################
 
 #-------------------------------------------------------------------------------------------
 # Initialization command (1 est_max_export_sessions).
