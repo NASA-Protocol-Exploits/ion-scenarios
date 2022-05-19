@@ -3,7 +3,7 @@
 #  text lines or interactively at acsadmin's command prompt (:).  Commands are interpreted  #
 #  line-by line, with exactly one command per line.                                         #
 #                                                                                           #
-#  You can find more details by using the 'man acsrc' command in the terminal.     	        #
+#  You can find more details by using the 'man acsrc' command in the terminal.              #
 #############################################################################################
 
 #--------------------------------------------------------------------------------------------
