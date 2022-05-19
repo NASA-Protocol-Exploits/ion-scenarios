@@ -1,13 +1,12 @@
-
 #### Node Details #########################################################################
-# FILE:    n5.ionrc									  #
-# CONTENT: configuration commands							  #
-# FOR:     ionadmin								          #
-# BUILDER: ION Configuration Editor       						  # 
-# NETWORK: CFDP: Mission Control > Ground Station > 2x Satellites Enviroment		  #
-# NODE:    n5									          #
-# IP NAME: 10.3.3.3/32    							          #
-# DATE:    Wed APR 13 22:17:37 2022							  #
+# FILE:    n5.ionrc									                                      #
+# CONTENT: configuration commands		                                                  #
+# FOR:     ionadmin								                                          #
+# BUILDER: ION Configuration Editor       						                          # 
+# NETWORK: CFDP: Mission Control > Ground Station > 2x Satellites Enviroment	    	  #
+# NODE:    n5									                                          #
+# IP NAME: 10.3.3.3/32    							                                      #
+# DATE:    Wed APR 13 22:17:37 2022						                            	  #
 ###########################################################################################
 
 #------------------------------------------------------------------------------------------

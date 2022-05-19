@@ -2,7 +2,7 @@
 # Bundle Protocol management commands are passed to bpadmin either in a file of text lines #
 # or interactively at bpadmin's command prompt (:). Commands are interpreted line-by line, #
 # with exactly one command per line.                                                       #
-#											   #
+#											                                               #
 # You can find more details by using the 'man bprc' command in the terminal.               #
 ############################################################################################          
 
@@ -59,7 +59,9 @@ a induct  ltp 1 ltpcli
 
 #--- Live Outducts ---
 a outduct udp 127.0.0.1 udpclo
+a outduct ltp 4 ltpclo
 a outduct ltp 3 ltpclo
+
 
 
 #-------------------------------------------------------------------------------------------

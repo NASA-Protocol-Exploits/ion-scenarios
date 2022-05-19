@@ -1,8 +1,8 @@
 #### ION security policy management Configuration File #######################################
 # ION security policy management commands are passed to ionsecadmin either in a file of text #
 # lines or interactively at ionsecadmin's command prompt (:). Commands are interpreted line- #
-# by line, with exactly one command per line. 						     #
-#											     #
+# by line, with exactly one command per line. 						                         #
+#											                                                 #
 # You can find more details by using the 'man ionsecrc' command in the terminal.             #
 ##############################################################################################     
 
