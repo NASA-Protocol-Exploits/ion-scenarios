@@ -98,8 +98,8 @@ node n4 {
 	!
     }
     canvas c1
-    iconcoords {447.0 145.0}
-    labelcoords {447.0 177.0}
+    iconcoords {437.0 140.0}
+    labelcoords {437.0 172.0}
     services {OSPFv3MDR zebra IPForward SSH UserDefined}
     custom-config {
 	custom-config-id service:UserDefined:setup.sh
@@ -218,6 +218,7 @@ node n6 {
     interface-peer {e0 n4}
     interface-peer {e1 n3}
     interface-peer {e2 n5}
+    hidden 1
 }
 
 node n5 {
@@ -232,8 +233,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {760.0 135.0}
-    labelcoords {760.0 167.0}
+    iconcoords {729.0 311.0}
+    labelcoords {729.0 343.0}
     services {zebra OSPFv3MDR IPForward SSH UserDefined}
     custom-config {
 	custom-config-id service:UserDefined:setup.sh
@@ -347,6 +348,89 @@ annotation a8 {
     type text
     iconcoords {880.0 464.0}
     label {}
+    canvas c1
+}
+
+annotation a10 {
+    iconcoords {468.0 132.0}
+    type text
+    label {Satellite #1}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 10
+    effects {bold underline}
+    canvas c1
+}
+
+annotation a11 {
+    type text
+    iconcoords {432.0 89.0}
+    label {}
+    canvas c1
+}
+
+annotation a12 {
+    type text
+    iconcoords {506.0 98.0}
+    label {}
+    canvas c1
+}
+
+annotation a13 {
+    type text
+    iconcoords {460.0 102.0}
+    label {}
+    canvas c1
+}
+
+annotation a14 {
+    type text
+    iconcoords {435.0 113.0}
+    label {}
+    canvas c1
+}
+
+annotation a15 {
+    iconcoords {714.0 262.0}
+    type text
+    label {Satellite #2}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 10
+    effects {bold underline}
+    canvas c1
+}
+
+annotation a16 {
+    iconcoords {583.0 228.0}
+    type text
+    label {Ground Station}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 10
+    effects {bold underline}
+    canvas c1
+}
+
+annotation a17 {
+    iconcoords {555.0 473.0}
+    type text
+    label {Relay Node}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 10
+    effects {bold underline}
+    canvas c1
+}
+
+annotation a18 {
+    iconcoords {252.0 406.0}
+    type text
+    label {Mission Control}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 10
+    effects {bold underline}
     canvas c1
 }
 

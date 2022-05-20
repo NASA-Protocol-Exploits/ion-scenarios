@@ -1,17 +1,24 @@
-#  FILE:    MO.ionrc
-#  CONTENT: configuration commands
-#  FOR:     ionadmin
-#  BUILDER: ION Configuration Editor
-#  NETWORK: GSFCDemo3
-#  NODE:    MO
-#  IP NAME: 10.10.30.4
-#  DATE:    Wed Dec 31 22:21:37 EST 1969
-#
-#  INITIALIZE
-#  Ion node number:  5
-#  Ion configuration file name:  MO.ionconfig
+#### Node Details #########################################################################
+# FILE:    n1.ionrc                                                                       #
+# CONTENT: configuration commands                                                         #
+# FOR:     ionadmin                                                                       #
+# BUILDER: ION Configuration Editor                                                       #
+# NETWORK: CFDP: Mission Control > Ground Station > 2x Satellites Enviroment              #
+# NODE:    n1                                                                             #
+# IP NAME: eth0:10.0.2.1/24                                                               #
+#          eth1:10.0.0.1/24                                                               #
+# DATE:    Wed APR 13 22:17:37 2022                                                       #
+###########################################################################################
+
+#------------------------------------------------------------------------------------------
+# Initialize
+#------------------------------------------------------------------------------------------
+# ION node number:		1
+# ION configuration file name:  n1.ionconfig
 1 1 n1.ionconfig
-#
-#  START
-#  Program:   rfxclock
+
+#------------------------------------------------------------------------------------------
+# Start
+#------------------------------------------------------------------------------------------
+# Program:   rfxclock
 s

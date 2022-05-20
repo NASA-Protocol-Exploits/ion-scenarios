@@ -1,12 +1,21 @@
-#Initialization command (command 1).
-#Establish the LTP retransmission window.
-#A maximum of 64 sessions. 1 session ~ 1 second of transmission
-#Set a block size limit of 1000000 bytes. (approx data sent per session)
-####1 64 1000000
+#### Licklider Transmission Protocol Managment Configuration File ##########################
+# LTP management commands are passed to ltpadmin either in a file of text lines or intera- #
+# ctively at ltpadmin's command prompt (:). Commands are interpreted line-by line, with e- #
+# xactly one command per line.                                                             #
+#                                                                                          #
+# You can find more details by using the 'man ltprc' command in the terminal.              #
+############################################################################################
+
+#-------------------------------------------------------------------------------------------
+# Initialization command (1 est_max_export_sessions).
+#-------------------------------------------------------------------------------------------
 1 100
 
-#-----------------------------------------------------------------
-#Add a span (a connection)
+#-------------------------------------------------------------------------------------------
+# Add a span (A connection)
+#-------------------------------------------------------------------------------------------
+#--- Syntax --------------------------------------------------------------------------------
+# a span
 #       peer_engine_nbr
 #       max_export_sessions
 #       max_import_sessions
@@ -14,11 +23,17 @@
 #       aggregation_size_limit
 #       aggregation_time_limit
 #       LSO_command
-#      [queuing_latency]
+#       queuing_latency
+#
+#--- LTP Spans -----------------------------------------------------------------------------
+#a span <num> 100 100 64000 100000 1 'udplso x.x.x.x:1113 40000000'
 
-#-----------------------------------------------------------------
-# LTP Spans
-
-#-----------------------------------------------------------------
+#-------------------------------------------------------------------------------------------
 # Listener on 0.0.0.0
+#-------------------------------------------------------------------------------------------
 s 'udplsi 0.0.0.0:1113'
+
+#-------------------------------------------------------------------------------------------
+# LTP Watch Command
+#-------------------------------------------------------------------------------------------
+w 

@@ -98,8 +98,8 @@ node n4 {
 	!
     }
     canvas c1
-    iconcoords {509.0 131.0}
-    labelcoords {509.0 163.0}
+    iconcoords {520.0 132.0}
+    labelcoords {520.0 164.0}
     services {OSPFv3MDR zebra IPForward SSH UserDefined}
     custom-config {
 	custom-config-id service:UserDefined:setup.sh
@@ -218,6 +218,7 @@ node n6 {
     interface-peer {e0 n4}
     interface-peer {e1 n3}
     interface-peer {e2 n5}
+    hidden 1
 }
 
 node n5 {
@@ -232,8 +233,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {689.0 135.0}
-    labelcoords {689.0 167.0}
+    iconcoords {330.0 83.0}
+    labelcoords {330.0 115.0}
     services {zebra OSPFv3MDR IPForward SSH UserDefined}
     custom-config {
 	custom-config-id service:UserDefined:setup.sh
@@ -334,12 +335,12 @@ annotation a6 {
 }
 
 annotation a7 {
-    iconcoords {907.0 486.0}
+    iconcoords {851.0 485.0}
     type text
-    label {Luke Colins}
+    label {T1/22 - Luke Colins}
     labelcolor black
     fontfamily {Arial}
-    fontsize {12}
+    fontsize 12
     canvas c1
 }
 
