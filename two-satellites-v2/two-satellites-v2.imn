@@ -340,7 +340,7 @@ annotation a7 {
     label {T1/22 - Luke Colins}
     labelcolor black
     fontfamily {Arial}
-    fontsize 12
+    fontsize {12}
     canvas c1
 }
 
@@ -348,6 +348,68 @@ annotation a8 {
     type text
     iconcoords {880.0 464.0}
     label {}
+    canvas c1
+}
+
+annotation a10 {
+    iconcoords {359.0 77.0}
+    type text
+    label {Satellite #2}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 11
+    effects {bold}
+    canvas c1
+}
+
+annotation a11 {
+    type text
+    iconcoords {347.0 139.0}
+    label {}
+    canvas c1
+}
+
+annotation a12 {
+    iconcoords {549.0 128.0}
+    type text
+    label {Satellite #1}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 11
+    effects {bold}
+    canvas c1
+}
+
+annotation a13 {
+    iconcoords {611.0 230.0}
+    type text
+    label {Ground Station}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 11
+    effects {bold}
+    canvas c1
+}
+
+annotation a14 {
+    iconcoords {553.0 388.0}
+    type text
+    label {Relay Node}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 11
+    effects {bold}
+    canvas c1
+}
+
+annotation a15 {
+    iconcoords {317.0 417.0}
+    type text
+    label {Mission Control}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 11
+    effects {bold}
     canvas c1
 }
 
